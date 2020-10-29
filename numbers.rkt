@@ -18,7 +18,8 @@
 (define (factorialo n f)
   (conde
     [(zeroo n) (== f (build-num 1))]
-    [(fresh (n-1 f-1)
+    [(<o (build-num 0) n)
+     (fresh (n-1 f-1)
        (minuso n (build-num 1) n-1)
        (*o n f-1 f)
        (factorialo n-1 f-1))]))
