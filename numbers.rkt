@@ -15,12 +15,12 @@
     [(zero? n) f]
     [else (factorial (- n 1) (* n f))]))
 
-(define (factorialo n f) ; doesn't work, need initial accumulator & return it!
+(define (factorialo n f)
   (conde
     [(zeroo n) (== f (build-num 1))]
     [(fresh (n-1 f-1)
        (minuso n (build-num 1) n-1)
-       (*o n f f-1)
+       (*o n f-1 f)
        (factorialo n-1 f-1))]))
 
 (define (factorialo-out n f out)
